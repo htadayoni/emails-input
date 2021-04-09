@@ -1,0 +1,24 @@
+{
+  "name": "emails-input",
+  "version": "1.0.0",
+  "description": "Email input - vanilla js",
+  "main": "index.js",
+  "author": "h.tadayoni89@gmail.com",
+  "license": "MIT",
+  "keywords": [
+    "email-input",
+    "email-tags",
+    "tag"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/htadayoni/emails-input.git"
+  },
+  "bugs": {
+    "url": "https://github.com/htadayoni/emails-input/issues"
+  },
+  "homepage": "https://github.com/htadayoni/emails-input#readme"
+}

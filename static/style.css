@@ -1,0 +1,52 @@
+/* this is just for the form's text, the email input has it's own source for the font */
+@font-face {
+  font-family: 'Open Sans';
+  src: url('https://fonts.googleapis.com/css2?family=Open+Sans') format('truetype');
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.demo-form {
+  font-family: 'Open Sans', sans-serif;
+  color: #050038;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  width: 500px;
+}
+
+.demo-form__control {
+  padding: 32px 50px 24px 50px;
+  background: #f8f8f7;
+}
+
+.demo-form__control #emails-input {
+  display: flex;
+  height: 50px;
+}
+
+.demo-form__title {
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.demo-form__action-container {
+  padding: 24px 50px 32px 50px;
+  background: #fff;
+}
+
+.demo-form_button {
+  background: #4262ff;
+  border: none;
+  border-radius: 6px;
+  font-weight: normal;
+  padding: 8px 16px;
+  font-size: 14px;
+  margin-right: 8px;
+  color: #fff;
+  line-height: 24px;
+}

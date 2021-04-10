@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <link rel="stylesheet" href="<%= htmlWebpackPlugin.options.style %>">
+  </head>
+  <body>
+    <div class="demo-form">
+      <div class="demo-form__control">
+        <h1 class="demo-form__title">Share <strong>Board name</strong> with others</h1>
+        <div emails-input></div>
+      </div>
+      <div class="demo-form__action-container">
+        <button type="button" class="demo-form_button" data-action='add-email'>Add email</button>
+        <button type="button" class="demo-form_button" data-action='get-emails-count'>
+          Get emails count
+        </button>
+      </div>
+    </div>
+
+    <%= htmlWebpackPlugin.tags.bodyTags %>
+    <script>
+      var inputContainerNode = document.querySelector('#emails-input');
+    </script>
+  </body>
+</html>

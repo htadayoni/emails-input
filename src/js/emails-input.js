@@ -103,6 +103,11 @@ class EmailsInput {
       .filter(function(item) { return !item.classList.contains('invalid'); })
       .map(function(item) { return item.firstChild.textContent; });
   }
+
+  createRandomEmail(){
+    const randomEmail = `${this.utils.generateRandomText(15)}@gmail.com`;
+    this.add(randomEmail);
+  }
 }
 
 export default EmailsInput;

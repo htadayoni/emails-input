@@ -5,7 +5,6 @@ class Utils {
     for (let i = 0; i < len; i++) { 
       str += sample.charAt(Math.round(sample.length * Math.random()));
     }
-    console.log('asdasdasdasd');
     return str;
   }
 

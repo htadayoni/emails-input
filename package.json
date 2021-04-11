@@ -12,17 +12,22 @@
   ],
   "scripts": {
     "build": "webpack --config webpack.prod.js",
-    "start": "webpack-dev-server --open --config webpack.dev.js"
+    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "test": "mocha --recursive 'test/**/*.test.js'"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.1",
     "@babel/core": "^7.10.2",
     "@babel/preset-env": "^7.10.2",
     "@babel/register": "^7.10.1",
+    "@testing-library/dom": "^7.30.3",
+    "@testing-library/user-event": "^13.1.2",
     "babel-loader": "^8.1.0",
     "css-loader": "^3.6.0",
     "eslint": "^7.2.0",
     "eslint-loader": "^4.0.2",
+    "jsdom": "^16.5.2",
+    "mocha": "^8.3.2",
     "style-loader": "^1.2.1",
     "url-loader": "^4.1.0",
     "webpack": "^4.43.0",

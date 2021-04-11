@@ -13,7 +13,7 @@ class EmailsInput {
   init() {
     this.containerNode.innerHTML = ' \
       <div class="emails emails-input"> \
-        <input type="text" class="emails-input__textInput" placeholder="add more people ..."> \
+        <input type="text" role="emails-input" class="emails-input__textInput" placeholder="add more people ..."> \
       </div> \
     ';
   }
@@ -58,16 +58,16 @@ class EmailsInput {
 
     this.containerNode.addEventListener('keydown', event => {
       if (event.keyCode === 8 && !event.target.value) {
-        const chips = this.getChips();
-        if (!chips.length) return;
-        const lastChip = chips[chips.length - 1];
+        const items = this.getItems();
+        if (!items.length) return;
+        const lastItem = items[items.length - 1];
         
-        this.deleteEmail(lastChip);
+        this.deleteEmail(lastItem);
       }
     });
   }
 
-  getChips() {
+  getItems() {
     return Array.prototype.slice.call(this.containerNode.querySelectorAll('.emails-input .emails-input__email'));
   }
 
@@ -81,14 +81,13 @@ class EmailsInput {
     if (!this.utils.isValidEmail(trimEmail))
       item.classList.add('invalid');
 
-    item.innerHTML = `<span class="emails-input__emailContent">${trimEmail}</span><i class="emails-input__remove"></i>`;
+    item.innerHTML = `<span class="emails-input__emailContent">${trimEmail}</span><i role="emails-input__remove" class="emails-input__remove"></i>`;
 
     refElement.parentNode.insertBefore(item, refElement);
     refElement.value = '';
   }
 
   add(email) {
-    console.log('add', email);
     const refElement = this.containerNode.querySelector('input');
     this.addEmail(refElement, email);
   }
@@ -98,11 +97,11 @@ class EmailsInput {
   }
 
   getValidEmails() {
-    const chips = this.getChips();
+    const items = this.getItems();
     
-    return chips
-      .filter(function(chip) { return !chip.classList.contains('invalid'); })
-      .map(function(chip) { return chip.firstChild.textContent; });
+    return items
+      .filter(function(item) { return !item.classList.contains('invalid'); })
+      .map(function(item) { return item.firstChild.textContent; });
   }
 }
 

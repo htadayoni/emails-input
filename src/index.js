@@ -7,21 +7,19 @@ import Utils from './js/utils';
 
   document.addEventListener('DOMContentLoaded', function() {
     const utils = new Utils;
-    const inputContainerNode = document.querySelectorAll('[emails-input]');
+    const inputContainerNode = document.querySelector('#emails-input');
 
-    for(const inputNode of inputContainerNode) {
-      const emailsInput = new EmailsInput(inputNode);
+    const emailsInput = new EmailsInput(inputContainerNode);
 
-      document.querySelector('[data-action="add-email"]')
-        .addEventListener('click', function() {
-          const randomEmail = `${utils.generateRandomText(15)}@mail.com`;
-          emailsInput.add(randomEmail);
-        });
+    document.querySelector('[data-action="add-email"]')
+      .addEventListener('click', function() {
+        const randomEmail = `${utils.generateRandomText(15)}@gmail.com`;
+        emailsInput.add(randomEmail);
+      });
 
-      document.querySelector('[data-action="get-emails-count"]')
-        .addEventListener('click', function() {
-          alert('Valid email count: ' + emailsInput.getValidEmails().length);
-        });
-    }
+    document.querySelector('[data-action="get-emails-count"]')
+      .addEventListener('click', function() {
+        alert('Valid email count: ' + emailsInput.getValidEmails().length);
+      });
   });
 }());

@@ -58,11 +58,7 @@ class EmailsInput {
 
     this.containerNode.addEventListener('keydown', event => {
       if (event.keyCode === 8 && !event.target.value) {
-        const items = this.getItems();
-        if (!items.length) return;
-        const lastItem = items[items.length - 1];
-        
-        this.deleteEmail(lastItem);
+        this.deleteLastEmail();
       }
     });
   }
@@ -87,13 +83,21 @@ class EmailsInput {
     refElement.value = '';
   }
 
-  add(email) {
+  addNewEmail(email) {
     const refElement = this.containerNode.querySelector('input');
     this.addEmail(refElement, email);
   }
 
   deleteEmail(email) {
     this.containerNode.querySelector('.emails-input').removeChild(email);
+  }
+
+  deleteLastEmail() {
+    const items = this.getItems();
+    if (!items.length) return;
+    const lastItem = items[items.length - 1];
+    
+    this.deleteEmail(lastItem);
   }
 
   getValidEmails() {
@@ -106,7 +110,7 @@ class EmailsInput {
 
   createRandomEmail(){
     const randomEmail = `${this.utils.generateRandomText(15)}@gmail.com`;
-    this.add(randomEmail);
+    this.addNewEmail(randomEmail);
   }
 }
 

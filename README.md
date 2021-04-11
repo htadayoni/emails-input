@@ -69,5 +69,4 @@ Returns an array of valid emails in emails list.
 
 ```javascript
 const validEmails = emailsInput.getValidEmails();
-// 2
 ```
